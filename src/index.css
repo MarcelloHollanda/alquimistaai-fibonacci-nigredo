@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Paleta C3 - Fundo bege claro "Sou sutil para textos" */
+    --background: 36 18% 92%;
+    --foreground: 206 23% 30%;
+
+    /* Cards com fundo off-white */
+    --card: 40 25% 95%;
+    --card-foreground: 206 23% 30%;
+
+    --popover: 40 25% 95%;
+    --popover-foreground: 206 23% 30%;
+
+    /* Primary: Azul escuro (Navy) - #3B4F5E */
+    --primary: 206 23% 30%;
+    --primary-dark: 206 23% 22%;
+    --primary-foreground: 40 25% 95%;
+    --primary-glow: 206 23% 45%;
+
+    /* Secondary: Marrom/Terracota - #9F5540 */
+    --secondary: 13 43% 44%;
+    --secondary-foreground: 40 25% 95%;
+
+    /* Muted: Cinza claro */
+    --muted: 0 0% 88%;
+    --muted-foreground: 206 23% 35%;
+
+    /* Accent: Marrom mais claro */
+    --accent: 13 30% 60%;
+    --accent-foreground: 206 23% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 25% 95%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 40 25% 95%;
+
+    --warning: 45 93% 47%;
+    --warning-foreground: 206 23% 30%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 40 25% 95%;
+
+    /* Bordas: Cinza médio - #A1A1A1 */
+    --border: 0 0% 78%;
+    --input: 0 0% 78%;
+    --ring: 206 23% 30%;
+
+    --radius: 0.5rem;
+
+    /* Gradientes com marrom e azul */
+    --gradient-primary: linear-gradient(135deg, hsl(206 23% 30%), hsl(206 23% 22%));
+    --gradient-secondary: linear-gradient(135deg, hsl(13 43% 44%), hsl(13 30% 55%));
+    --gradient-hero: linear-gradient(to bottom right, hsl(206 23% 30%), hsl(13 43% 44%));
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px hsl(13 43% 44% / 0.3);
+
+    /* Sidebar com azul escuro */
+    --sidebar-background: 206 23% 30%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 13 43% 44%;
+    --sidebar-primary-foreground: 40 25% 95%;
+    --sidebar-accent: 206 23% 25%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 206 23% 40%;
+    --sidebar-ring: 13 43% 44%;
+  }
+
+  .dark {
+    /* Dark mode: Azul escuro de fundo */
+    --background: 206 23% 15%;
+    --foreground: 40 25% 95%;
+
+    --card: 206 23% 20%;
+    --card-foreground: 40 25% 95%;
+
+    --popover: 206 23% 20%;
+    --popover-foreground: 40 25% 95%;
+
+    /* Primary: Marrom no dark mode */
+    --primary: 13 43% 44%;
+    --primary-foreground: 40 25% 95%;
+    --primary-glow: 13 43% 55%;
+
+    /* Secondary: Cinza */
+    --secondary: 0 0% 40%;
+    --secondary-foreground: 40 25% 95%;
+
+    --muted: 206 23% 25%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Accent: Marrom claro */
+    --accent: 13 30% 60%;
+    --accent-foreground: 40 25% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 25% 95%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 40 25% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 206 23% 30%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 40 25% 95%;
+
+    --border: 206 23% 30%;
+    --input: 206 23% 30%;
+    --ring: 13 43% 44%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(206 23% 20%), hsl(206 23% 15%));
+    --gradient-secondary: linear-gradient(135deg, hsl(13 43% 44%), hsl(13 30% 55%));
+    --gradient-hero: linear-gradient(to bottom right, hsl(206 23% 20% / 0.9), hsl(13 43% 44% / 0.9));
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+    --shadow-glow: 0 0 30px hsl(13 43% 44% / 0.4);
+
+    --sidebar-background: 206 23% 18%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 13 43% 44%;
+    --sidebar-primary-foreground: 40 25% 95%;
+    --sidebar-accent: 206 23% 22%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 206 23% 28%;
+    --sidebar-ring: 13 43% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
