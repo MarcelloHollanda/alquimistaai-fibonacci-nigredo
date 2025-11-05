@@ -1,0 +1,42 @@
+name: Deploy Lovable Frontend to Replit
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Sync to Replit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Notify Replit
+        run: |
+          echo "🎨 Deploying Lovable frontend to Replit..."
+          echo "Commit: ${{ github.sha }}"
+          echo "Author: ${{ github.actor }}"
+      
+      - name: Trigger Replit webhook
+        env:
+          REPLIT_WEBHOOK_URL: ${{ secrets.REPLIT_WEBHOOK_URL }}
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
+        run: |
+          curl -X POST "$REPLIT_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $DEPLOY_SECRET" \
+            -d '{
+              "repository": "${{ github.repository }}",
+              "branch": "${{ github.ref_name }}",
+              "commit": "${{ github.sha }}",
+              "author": "${{ github.actor }}",
+              "message": "${{ github.event.head_commit.message }}",
+              "source": "lovable"
+            }'
+      
+      - name: Deployment complete
+        run: echo "✅ Lovable frontend synced to Replit!"
