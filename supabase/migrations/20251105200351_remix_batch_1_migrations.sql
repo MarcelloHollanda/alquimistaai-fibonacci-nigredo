@@ -1,4 +1,6 @@
 
+-- Migration: 20251029005236
+
 -- Migration: 20251016184442
 -- Criar enum para roles
 CREATE TYPE public.app_role AS ENUM ('master', 'gerente', 'usuario');
@@ -469,3 +471,4 @@ BEGIN
   RETURN new;
 END;
 $$;
+
