@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Building2 } from "lucide-react";
+import logoNigredo from "@/assets/logo-nigredo.gif";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -40,13 +40,11 @@ export default function Login() {
       <Card className="w-full max-w-md shadow-glow">
         <CardHeader className="space-y-1 text-center">
           <div className="flex justify-center mb-4">
-            <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center">
-              <Building2 className="h-6 w-6 text-primary-foreground" />
-            </div>
+            <img src={logoNigredo} alt="Nigredo" className="h-24 w-auto" />
           </div>
-          <CardTitle className="text-2xl font-bold">Núcleo de Prospecção</CardTitle>
+          <CardTitle className="text-2xl font-bold">NIGREDO</CardTitle>
           <CardDescription>
-            Entre com suas credenciais para acessar o sistema
+            Purificando dados brutos
           </CardDescription>
         </CardHeader>
         <CardContent>

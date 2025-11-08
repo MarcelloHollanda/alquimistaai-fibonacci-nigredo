@@ -6,6 +6,7 @@ import { Moon, Sun, LogOut } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTenant } from "@/contexts/TenantContext";
 import { useEffect, useState } from "react";
+import logoNigredo from "@/assets/logo-nigredo.gif";
 
 export function AppLayout() {
   const navigate = useNavigate();
@@ -53,10 +54,11 @@ export function AppLayout() {
               <SidebarTrigger />
               
               <div className="flex items-center gap-2">
-                {tenant.logo && (
-                  <img src={tenant.logo} alt={tenant.name} className="h-8 w-8 object-contain" />
-                )}
-                <span className="font-semibold text-foreground">{tenant.name}</span>
+                <img src={logoNigredo} alt="Nigredo" className="h-8 w-auto" />
+                <div className="flex flex-col">
+                  <span className="font-bold text-foreground">NIGREDO</span>
+                  <span className="text-xs text-muted-foreground">Purificando dados brutos</span>
+                </div>
               </div>
 
               <div className="ml-auto flex items-center gap-2">
