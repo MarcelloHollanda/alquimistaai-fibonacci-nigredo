@@ -26,10 +26,9 @@ export default function Login() {
     setLoading(true);
     try {
       await login(email, password);
-      toast.success("Login realizado com sucesso!");
       navigate("/");
     } catch (error) {
-      toast.error("Erro ao fazer login. Tente novamente.");
+      // Erro já tratado no AuthContext
     } finally {
       setLoading(false);
     }
@@ -78,12 +77,18 @@ export default function Login() {
 
           <div className="mt-6 p-4 bg-muted rounded-lg">
             <p className="text-xs text-muted-foreground text-center mb-2">
-              <strong>Modo simulado</strong> - Use qualquer e-mail/senha
+              <strong>Login pela primeira vez?</strong>
             </p>
-            <div className="text-xs text-muted-foreground space-y-1">
-              <p>• admin@empresa.com → Perfil Admin</p>
-              <p>• Outros e-mails → Perfil Gestor</p>
-            </div>
+            <p className="text-xs text-muted-foreground text-center">
+              Crie sua conta na aba "Criar Conta" abaixo
+            </p>
+            <Button 
+              variant="link" 
+              className="w-full mt-2" 
+              onClick={() => navigate("/auth")}
+            >
+              Ir para Cadastro
+            </Button>
           </div>
         </CardContent>
       </Card>
