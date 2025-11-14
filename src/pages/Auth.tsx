@@ -176,6 +176,12 @@ export default function Auth() {
 
             <TabsContent value="signup">
               <form onSubmit={handleSignup} className="space-y-4 mt-4">
+                <div className="p-3 bg-blue-100 dark:bg-blue-900/20 border border-blue-300 dark:border-blue-700 rounded-lg">
+                  <p className="text-xs text-blue-900 dark:text-blue-100">
+                    <strong>💡 Setup Automático:</strong> O primeiro usuário cadastrado receberá automaticamente permissões de administrador (Master).
+                  </p>
+                </div>
+                
                 <div className="space-y-2">
                   <Label htmlFor="signup-name">Nome Completo</Label>
                   <Input

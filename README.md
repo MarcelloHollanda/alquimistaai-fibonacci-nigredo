@@ -1,4 +1,19 @@
-# Welcome to your Lovable project
+# Nigredo - Núcleo de Prospecção Alquimista.IA
+
+Sistema inteligente de prospecção comercial com purificação alquímica de dados.
+
+## 🚀 Setup Inicial
+
+### Primeiro Acesso - Criação Automática de Admin
+
+O sistema **detecta automaticamente** o primeiro cadastro e atribui permissões de administrador (role 'master'):
+
+1. Acesse `/auth` para criar sua conta
+2. Preencha: nome completo, e-mail e senha (mín. 6 caracteres)
+3. O **primeiro usuário** recebe automaticamente role **'master'** (admin)
+4. Usuários subsequentes recebem role **'usuario'** (padrão)
+
+📖 **Documentação completa**: [SETUP_INICIAL.md](./SETUP_INICIAL.md)
 
 ## Project info
 
